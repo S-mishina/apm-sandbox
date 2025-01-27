@@ -17,6 +17,8 @@ spec:
         protocols:
           grpc:
             endpoint: "0.0.0.0:4317"
+          http:
+            endpoint: "0.0.0.0:4318"
     exporters:
       otlp:
         endpoint: "tempo-simplest-distributor.my-tempo:4317"
@@ -26,6 +28,10 @@ spec:
         endpoint: http://prometheus-operated.monitoring:9090/api/v1/write
         target_info:
           enabled: true
+      otlphttp:
+        endpoint: https://otlp.nr-data.net:4317
+        headers:
+          api-key: <INSERT_NEW_RELIC_LICENSE_KEY>
     processors:
       k8sattributes:
         auth_type: serviceAccount
@@ -37,7 +43,7 @@ spec:
         traces:
           receivers: [otlp]
           processors: [k8sattributes]
-          exporters: [otlp]
+          exporters: [otlp,otlphttp]
 ---
 apiVersion: v1
 kind: ServiceAccount
