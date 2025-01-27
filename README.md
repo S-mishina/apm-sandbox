@@ -1,6 +1,12 @@
 # README
 
-## Cluster Install
+## Comparison of UI and functions between grafana and new Relic
+
+TBU
+
+## install README
+
+### Cluster Install
 
 ```bash:bash
 ❯ kind create cluster -n apm-test --config cluster/cluster.yaml
@@ -21,55 +27,55 @@ Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/qui
 
 ```
 
-## namespace install for cluster
+### namespace install for cluster
 
 ```bash:bash
 ❯ kubectl apply -f cluster/namespace.yaml
 ```
 
-## Role install
+### Role install
 
 ```bash:bash
 ❯ kubectl apply -f cluster/role.yaml
 ```
 
-## Cert-manager Install
+### Cert-manager Install
 
 ```bash:bash
 ❯ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.3/cert-manager.yaml
 ```
 
-## GrafanaTempo Operator Install
+### GrafanaTempo Operator Install
 
 ```bash:bash
 ❯ kubectl apply -f https://github.com/grafana/tempo-operator/releases/latest/download/tempo-operator.yaml
 ```
 
-## Minio install
+### Minio install
 
 ```bash:bash
 ❯ kubectl apply -f https://raw.githubusercontent.com/grafana/tempo-operator/main/minio.yaml
 ```
 
-## TempoCR
+### TempoCR
 
 ```bash:bash
 ❯ kubectl apply -k tempo/
 ```
 
-## OpenTelemetry Operator Install
+### OpenTelemetry Operator Install
 
 ```bash:bash
 ❯ kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/latest/download/opentelemetry-operator.yaml
 ```
 
-## Install OpenTelemetry Collector Configuration
+### Install OpenTelemetry Collector Configuration
 
 ```bash:bash
 ❯ kubectl apply -f otel-controller/config.yaml
 ```
 
-## grafana
+### grafana
 
 ```bash:bash
 ❯ kubectl apply -k grafana/
