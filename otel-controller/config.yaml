@@ -32,6 +32,7 @@ spec:
       #   endpoint: https://otlp.nr-data.net:4317
       #   headers:
       #     api-key: <INSERT_NEW_RELIC_LICENSE_KEY>
+        debug:
     processors:
       k8sattributes:
         auth_type: serviceAccount
@@ -44,7 +45,7 @@ spec:
           receivers: [otlp]
           processors: [k8sattributes]
           exporters: [otlp]
-          # exporters: [otlp,otlphttp]
+          # exporters: [otlp,otlphttp,debug]
 ---
 apiVersion: v1
 kind: ServiceAccount
