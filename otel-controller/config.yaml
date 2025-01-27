@@ -1,0 +1,46 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: simplest1
+  namespace: monitoring
+spec:
+  mode: deployment
+  podAnnotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '8888'
+  image: otel/opentelemetry-collector-contrib:0.108.0
+  args:
+    feature-gates: "-component.UseLocalHostAsDefaultHost"
+  config: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            endpoint: "0.0.0.0:4317"
+    exporters:
+      otlp:
+        endpoint: "tempo-simplest-distributor.my-tempo:4317"
+        tls:
+          insecure: true
+      prometheusremotewrite:
+        endpoint: http://prometheus-operated.monitoring:9090/api/v1/write
+        target_info:
+          enabled: true
+    processors:
+      k8sattributes:
+        auth_type: serviceAccount
+        extract:
+          metadata:
+            - k8s.deployment.name
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [k8sattributes]
+          exporters: [otlp]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: simplest1-collector
+  namespace: monitoring

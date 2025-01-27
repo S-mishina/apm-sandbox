@@ -1,0 +1,23 @@
+apiVersion: tempo.grafana.com/v1alpha1
+kind: TempoStack
+metadata:
+  name: simplest
+  namespace: my-tempo
+spec:
+  storage:
+    secret:
+      name: minio-test
+      type: s3
+  storageSize: 1Gi
+  template:
+    queryFrontend:
+      jaegerQuery:
+        enabled: true
+    compactor:
+      resources:
+        limits:
+          memory: 2Gi
+          cpu: 1000m
+        requests:
+          memory: 1Gi
+          cpu: 500m
