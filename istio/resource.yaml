@@ -1,0 +1,21 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  name: test
+  namespace: istio-system
+spec:
+  profile: demo
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true
+    extensionProviders:
+      - name: otel-tracing
+        opentelemetry:
+          port: 4317
+          service: simplest1-collector.monitoring.svc.cluster.local
+          resource_detectors:
+            environment: {}
+    defaultProviders:
+      tracing:
+        - otel-tracing
+---

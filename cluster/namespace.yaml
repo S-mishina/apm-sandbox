@@ -28,3 +28,10 @@ metadata:
   name: monitoring
   labels:
     istio-injection: enabled
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sample-app
+  labels:
+    istio-injection: enabled

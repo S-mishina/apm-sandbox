@@ -1,2 +1,4 @@
 otel-controller/secret-config.yaml
+otel-controller/instrumentation.yaml
 otel-controller/kustomization.yaml
+k8s.yaml
