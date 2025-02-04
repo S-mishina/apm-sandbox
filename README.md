@@ -4,6 +4,7 @@
   - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
     - [What is APM anyway?](#what-is-apm-anyway)
     - [Comparison items](#comparison-items)
+      - [assumption](#assumption)
       - TBU
   - [sandbox system install](#sandbox-system-install)
 
@@ -19,7 +20,17 @@ In this repository, I will compare APM with the OSS Grafana Tempo and the monito
 
 ### Comparison items
 
-TBU
+#### assumption
+
+> [!NOTE]
+> 
+> * ***(Assumption 1):*** I will compare features based on OpenTelemetry instead of the tracer tool provided by each SaaS tool in this repository.
+> 
+> * ***(Assumption 2):*** To check the functionality in New Relic, check the `otel-collector/config.yaml`, modify it as necessary, and then check the operation.
+> 
+> * ***(Assumption 3):*** This Sandbox provides a sample application. Please check `sandbox-app/resource.yaml` for details.
+
+
 
 ## sandbox system install
 
