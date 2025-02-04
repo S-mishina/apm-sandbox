@@ -75,6 +75,17 @@ However, New Relic's APM has another face. Although not discussed extensively in
 
 ![New Relic APM Service](image/new_relic_apm_service.png)
 
+If you go back and check the specific information on TRACE, you will see that it is basically the same information as Grafana + Grafana Tempo.
+
+I think the difference is that Grafana allows access to span information on a single page, whereas New Relic requires hovering over a specific span to investigate.
+
+![New Relic APM Trace Details](image/new_relic_trace_details.png)
+
+However, New Relic, again, has the advantage of being able to compare historical trends on a metrics basis when accessing Span.
+
+![New Relic APM Trace Details](image/new_relic_trace_details_metrik.png)
+
+***personal opinion***
 
 
 ## sandbox system install
