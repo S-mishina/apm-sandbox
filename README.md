@@ -71,6 +71,10 @@ Looking at the New Relic screen, unlike Grafana + Grafana Tempo, it is not possi
 
 ![New Relic Trace Time](image/new_relic_trace_time.png)
 
+However, New Relic's APM has another face. Although not discussed extensively in this session, there is a separate and powerful Service page in APM that allows you to check the status of your services on a metrics basis.
+
+![New Relic APM Service](image/new_relic_apm_service.png)
+
 
 
 ## sandbox system install
