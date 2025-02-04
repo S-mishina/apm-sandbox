@@ -34,7 +34,7 @@ In this repository, I will compare APM with the OSS Grafana Tempo and the monito
 
 |Grafana| New Relic|
 |------ | --------|
-|TBU |TBU|
+|![grafana ui](image/grafana_ui.png) |TBU|
 
 ***Grafana***
 
