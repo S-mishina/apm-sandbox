@@ -1,10 +1,14 @@
 # README
 
-## Comparison of UI and functions between grafana and new Relic
+- CONTENTS.
+  - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
+  - [sandbox system install](#sandbox-system-install)
+
+## Comparison of UI and functions between Grafana and new Relic
 
 TBU
 
-## install README
+## sandbox system install
 
 ### Cluster Install
 
