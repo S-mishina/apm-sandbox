@@ -2,9 +2,22 @@
 
 - CONTENTS.
   - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
+    - [What is APM anyway?](#what-is-apm-anyway)
+    - [Comparison items](#comparison-items)
+      - TBU
   - [sandbox system install](#sandbox-system-install)
 
 ## Comparison of UI and functions between Grafana and new Relic
+
+### What is APM anyway?
+
+APM is a monitoring technique for measuring application performance. For example, it can be used to check the performance from the length of methods in the code, the response time of the data store, or to improve the observability of distributed tracing.
+
+[link](https://newrelic.com/jp/blog/best-practices/what-is-apm-service)
+
+In this repository, I will compare APM with the OSS Grafana Tempo and the monitoring SaaS tool New Relic based on my knowledge.
+
+### Comparison items
 
 TBU
 
