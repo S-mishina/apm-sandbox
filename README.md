@@ -51,6 +51,12 @@ It also excels in basic real-time performance, reloading pages at minimum 5s int
 
 ![Grafana APM Time](image/grafana_apm_ui_time.png)
 
+If you check the trace page, you can basically see the results of the distributed tracing on a single page, where you can see the results (status) of the actions taken by the user.
+
+![Grafana APM Trace ALL Page](image/grafana_apm_all_trace_page.png)
+
+As you can see, Grafana + Grafana Tempo, which is OSS, can be fully utilized as APM.
+
 ***New Relic***
 
 TBU
