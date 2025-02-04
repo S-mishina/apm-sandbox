@@ -5,7 +5,7 @@
     - [What is APM anyway?](#what-is-apm-anyway)
     - [Comparison items](#comparison-items)
       - [assumption](#assumption)
-      - TBU
+      - [basic ui](#basic-ui)
   - [sandbox system install](#sandbox-system-install)
 
 ## Comparison of UI and functions between Grafana and new Relic
@@ -30,7 +30,19 @@ In this repository, I will compare APM with the OSS Grafana Tempo and the monito
 > 
 > * ***(Assumption 3):*** This Sandbox provides a sample application. Please check `sandbox-app/resource.yaml` for details.
 
+#### Basic UI
 
+|Grafana| New Relic|
+|------ | --------|
+|TBU |TBU|
+
+***Grafana***
+
+TBU
+
+***New Relic***
+
+TBU
 
 ## sandbox system install
 
