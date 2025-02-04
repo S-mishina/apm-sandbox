@@ -85,8 +85,16 @@ However, New Relic, again, has the advantage of being able to compare historical
 
 ![New Relic APM Trace Details](image/new_relic_trace_details_metrik.png)
 
+
 ***personal opinion***
 
+This is completely my personal opinion, but I feel that when comparing monitoring SaaS vs. OSS monitoring tools on a UI basis in this way, it is more important which monitoring tool has more unique features as a monitoring tool than OSS vs. SaaS, and which is more suitable for the team implementing the tool.
+
+For example, we felt that Grafana is more of a real-time and simple UI. Therefore, we think it could be said to be a monitoring tool that makes it easy to check failures and performance in real time.
+
+Conversely, New Relic, when viewed as a trace, seems to focus mainly on the amount of information (ease of insight) rather than real-time performance.
+
+What we can say from this is that the selection will depend on whether you want to design a monitoring tool that places APM at the main axis of the monitoring tool, or whether you want to use logs and metrics as the main axis of monitoring and use APM as supplementary information.
 
 ## sandbox system install
 
