@@ -102,32 +102,6 @@ spec:
       port: 8081
       targetPort: 8080
   type: ClusterIP
-# ---
-# apiVersion: networking.istio.io/v1beta1
-# kind: ProxyConfig
-# metadata:
-#   name: test-ryu-sandbox-app
-# spec:
-#   concurrency: 0
-#   environmentVariables:
-#     ENABLE_STATS: "true"
-#     OTEL_RESOURCE_ATTRIBUTES: "service.name=istio-proxy.test-ryu-sandbox-app"
-#   selector:
-#     matchLabels:
-#       service.istio.io/canonical-name: sandbox-app
-# ---
-# apiVersion: networking.istio.io/v1beta1
-# kind: ProxyConfig
-# metadata:
-#   name: test-ryu-sandbox-app
-# spec:
-#   concurrency: 0
-#   environmentVariables:
-#     ENABLE_STATS: "true"
-#     OTEL_RESOURCE_ATTRIBUTES: "service.name=istio-proxy.test-ryu-sandbox-app2"
-#   selector:
-#     matchLabels:
-#       service.istio.io/canonical-name: sandbox-app1
 ---
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
@@ -144,3 +118,41 @@ spec:
     env:
       - name: OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED
         value: 'true'
+      - name: OTEL_EXPORTER_OTLP_TRACES_PROTOCOL
+        value: http/protobuf
+  java:
+    env:
+      - name: OTEL_EXPORTER_OTLP_TRACES_PROTOCOL
+        value: http/protobuf
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandbox-app2
+  namespace: sample-app
+  labels:
+    app: sandbox-app2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sandbox-app2
+  template:
+    metadata:
+      labels:
+        app: sandbox-app2
+        test: "2"
+      annotations:
+        sidecar.istio.io/inject: "true"
+        instrumentation.opentelemetry.io/inject-java: "true"
+        instrumentation.opentelemetry.io/container-names: "sandbox-app2"
+    spec:
+      containers:
+      - name: sandbox-app2
+        image: ghcr.io/s-mishina/spring-boot-jmx-metrics-sample:latest
+        ports:
+        - containerPort: 8080
+        command: ["java","-jar","/app.jar"]
+        env:
+        - name: TEST_ENDPOINT
+          value: "http://sandbox-app.sample-app:8080"
