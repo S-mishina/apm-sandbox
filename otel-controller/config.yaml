@@ -1,4 +1,4 @@
-apiVersion: opentelemetry.io/v1alpha1
+apiVersion: opentelemetry.io/v1beta1
 kind: OpenTelemetryCollector
 metadata:
   name: simplest1
@@ -11,7 +11,7 @@ spec:
   image: otel/opentelemetry-collector-contrib:0.108.0
   args:
     feature-gates: "-component.UseLocalHostAsDefaultHost"
-  config: |
+  config:
     receivers:
       otlp:
         protocols:
@@ -31,21 +31,32 @@ spec:
       # otlphttp:
       #   endpoint: https://otlp.nr-data.net:4317
       #   headers:
-      #     api-key: <INSERT_NEW_RELIC_LICENSE_KEY>
-        debug:
+      #     api-key: <api-key>
+      debug:
     processors:
       k8sattributes:
         auth_type: serviceAccount
         extract:
           metadata:
             - k8s.deployment.name
+      transform/processing_trace_span_names:
+        trace_statements:
+          - context: span
+            statements:
+              - set(name, Concat([name, attributes["http.url"]], " "))
+                where (name == "GET" or name == "POST" or name == "PUT" or name == "DELETE") and attributes["istio.cluster_id"] != "Kubernetes"
+      attributes:
+        actions:
+          - key: http.route
+            action: insert
+            from_attribute: http.url
     service:
       pipelines:
         traces:
           receivers: [otlp]
-          processors: [k8sattributes]
+          processors: [k8sattributes,transform/processing_trace_span_names,attributes]
+          # exporters: [otlp,otlphttp]
           exporters: [otlp]
-          # exporters: [otlp,otlphttp,debug]
 ---
 apiVersion: v1
 kind: ServiceAccount
