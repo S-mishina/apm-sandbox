@@ -6,6 +6,7 @@
     - [Comparison items](#comparison-items)
       - [assumption](#assumption)
       - [basic ui](#basic-ui)
+      - [How easy is it to see the UI when an error occurs?](#how-easy-is-it-to-see-the-ui-when-an-error-occurs)
   - [sandbox system install](#sandbox-system-install)
 
 ## Comparison of UI and functions between Grafana and new Relic
@@ -95,6 +96,12 @@ For example, we felt that Grafana is more of a real-time and simple UI. Therefor
 Conversely, New Relic, when viewed as a trace, seems to focus mainly on the amount of information (ease of insight) rather than real-time performance.
 
 What we can say from this is that the selection will depend on whether you want to design a monitoring tool that places APM at the main axis of the monitoring tool, or whether you want to use logs and metrics as the main axis of monitoring and use APM as supplementary information.
+
+Since we have compared basic functionality on a UI basis up to this point, we would like to compare each monitoring tool using more specific use cases as examples.
+
+#### How easy is it to see the UI when an error occurs?
+
+TBU
 
 ## sandbox system install
 
