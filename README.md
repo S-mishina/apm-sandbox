@@ -34,7 +34,7 @@ In this repository, I will compare APM with the OSS Grafana Tempo and the monito
 
 ||Grafana| New Relic|
 |------ |------ | --------|
-|APM Main Page UI |![Grafana UI](image/grafana_ui.png)| ![New Relic UI](image/new_relic_ui.png) |
+|APM Trace Main Page UI |![Grafana UI](image/grafana_ui.png)| ![New Relic UI](image/new_relic_ui.png) |
 |APM Trace Page UI |![Grafana APM UI](image/grafana_apm_page.png)| ![New Relic APM UI](image/new_relic_apm_page.png) |
 
 ※ If you look closely, you will see that the trace id is the same. Thus, we see that they are outputting the results of the same request.
@@ -59,7 +59,19 @@ As you can see, Grafana + Grafana Tempo, which is OSS, can be fully utilized as 
 
 ***New Relic***
 
-TBU
+The basic screen of New Relic is not much different from Grafana's, as you can see from the image comparison of the Basic UI.
+
+![New Relic Trace Search](image/new_relic_trace_search.png)
+
+The APM Trace Page, where the metrics appear together, is a revolutionary feature that Grafana does not have.
+
+![New Relic Trace Metric](image/new_relic_trace_metrik.png)
+
+Looking at the New Relic screen, unlike Grafana + Grafana Tempo, it is not possible to get APM traces in real time.
+
+![New Relic Trace Time](image/new_relic_trace_time.png)
+
+
 
 ## sandbox system install
 
