@@ -32,9 +32,12 @@ In this repository, I will compare APM with the OSS Grafana Tempo and the monito
 
 #### Basic UI
 
-|Grafana| New Relic|
-|------ | --------|
-|![grafana ui](image/grafana_ui.png) |TBU|
+||Grafana| New Relic|
+|------ |------ | --------|
+|APM Main Page UI |![grafana ui](image/grafana_ui.png)| ![new relic ui](image/new_relic_ui.png) |
+|APM Trace Page UI |TBU| TBU |
+
+Give your personal opinion (feelings, differences) on each UI base.
 
 ***Grafana***
 
