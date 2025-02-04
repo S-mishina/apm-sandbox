@@ -43,7 +43,13 @@ Give your personal opinion (feelings, differences) on each UI base.
 
 ***Grafana***
 
-TBU
+The UI of Grafana + Grafana Tempo is very simple and straightforward. In particular, the Main page has a search bar that basically allows you to search for a trace, identify a trace, or even specify the Service you want to retrieve.
+
+![Grafana APM Search](image/grafana_apm_ui_search.png)
+
+It also excels in basic real-time performance, reloading pages at minimum 5s intervals to obtain the latest trace.
+
+![Grafana APM Time](image/grafana_apm_ui_time.png)
 
 ***New Relic***
 
