@@ -37,6 +37,8 @@ In this repository, I will compare APM with the OSS Grafana Tempo and the monito
 |APM Main Page UI |![Grafana UI](image/grafana_ui.png)| ![New Relic UI](image/new_relic_ui.png) |
 |APM Trace Page UI |![Grafana APM UI](image/grafana_apm_page.png)| ![New Relic APM UI](image/new_relic_apm_page.png) |
 
+※ If you look closely, you will see that the trace id is the same. Thus, we see that they are outputting the results of the same request.
+
 Give your personal opinion (feelings, differences) on each UI base.
 
 ***Grafana***
