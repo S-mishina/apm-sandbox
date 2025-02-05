@@ -156,3 +156,35 @@ spec:
         env:
         - name: TEST_ENDPOINT
           value: "http://sandbox-app.sample-app:8080"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandbox-app3
+  namespace: sample-app
+  labels:
+    app: sandbox-app3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sandbox-app3
+  template:
+    metadata:
+      labels:
+        app: sandbox-app3
+        test: "2"
+      annotations:
+        sidecar.istio.io/inject: "true"
+        instrumentation.opentelemetry.io/inject-java: "true"
+        instrumentation.opentelemetry.io/container-names: "sandbox-app3"
+    spec:
+      containers:
+      - name: sandbox-app2
+        image: ghcr.io/s-mishina/thread_pool_task_executor_sandbox:latest
+        ports:
+        - containerPort: 8080
+        command: ["java","-jar","/app.jar"]
+        env:
+        - name: TEST_ENDPOINT
+          value: "http://sandbox-app.sample-app:8080"
