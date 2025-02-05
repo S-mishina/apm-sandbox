@@ -2,8 +2,8 @@
 
 - CONTENTS.
   - [What is APM anyway?](#what-is-apm-anyway)
-  - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
   - [About the applications we offer for using this sandbox](#about-the-applications-we-offer-for-using-this-sandbox)
+  - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
     - [Comparison items](#comparison-items)
       - [assumption](#assumption)
       - [basic ui](#basic-ui)
