@@ -3,6 +3,7 @@
 - CONTENTS.
   - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
     - [What is APM anyway?](#what-is-apm-anyway)
+    - [About the applications we offer for using this sandbox](#about-the-applications-we-offer-for-using-this-sandbox)
     - [Comparison items](#comparison-items)
       - [assumption](#assumption)
       - [basic ui](#basic-ui)
@@ -18,6 +19,18 @@ APM is a monitoring technique for measuring application performance. For example
 [link](https://newrelic.com/jp/blog/best-practices/what-is-apm-service)
 
 In this repository, I will compare APM with the OSS Grafana Tempo and the monitoring SaaS tool New Relic based on my knowledge.
+
+## About the applications we offer for using this sandbox
+
+This repository provides several sandbox applications (Python and Java applications) to check the behavior of APM.
+
+Please check the following repositories for each application.
+
+* python
+  * [sandbox-otel-py-app](https://github.com/S-mishina/sandbox-otel-py-app)
+* Java
+  * [spring-boot-jmx-metrics-sample](https://github.com/S-mishina/spring-boot-jmx-metrics-sample)
+    * ※ This application was originally created to check the behavior of jmx, but can be used as a sandbox because it includes code to put a span in the otel.
 
 ### Comparison items
 
