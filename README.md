@@ -1,8 +1,8 @@
 # README
 
 - CONTENTS.
+  - [What is APM anyway?](#what-is-apm-anyway)
   - [Comparison of UI and functions between Grafana and new Relic](#comparison-of-ui-and-functions-between-grafana-and-new-relic)
-    - [What is APM anyway?](#what-is-apm-anyway)
     - [About the applications we offer for using this sandbox](#about-the-applications-we-offer-for-using-this-sandbox)
     - [Comparison items](#comparison-items)
       - [assumption](#assumption)
@@ -10,9 +10,7 @@
       - [How easy is it to see the UI when an error occurs?](#how-easy-is-it-to-see-the-ui-when-an-error-occurs)
   - [sandbox system install](#sandbox-system-install)
 
-## Comparison of UI and functions between Grafana and new Relic
-
-### What is APM anyway?
+## What is APM anyway?
 
 APM is a monitoring technique for measuring application performance. For example, it can be used to check the performance from the length of methods in the code, the response time of the data store, or to improve the observability of distributed tracing.
 
@@ -31,6 +29,9 @@ Please check the following repositories for each application.
 * Java
   * [spring-boot-jmx-metrics-sample](https://github.com/S-mishina/spring-boot-jmx-metrics-sample)
     * ※ This application was originally created to check the behavior of jmx, but can be used as a sandbox because it includes code to put a span in the otel.
+
+
+## Comparison of UI and functions between Grafana and new Relic
 
 ### Comparison items
 
